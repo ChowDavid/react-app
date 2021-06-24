@@ -1,14 +1,25 @@
-import Todo from './components/Todo';
-
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import AllMeetupPage from "./pages/AllMeetups";
+import FavoritesPage from "./pages/Favorites";
+import NewMeetup from "./pages/NewMeetup";
 
 function App() {
   return (
-    <div>
-      <h1>My Todos</h1>
-      <Todo text='Learn React' />
-      <Todo text='Master react' />
-      <Todo text='Explore the full React course' />
-    </div>
+      <div>
+<Switch>
+
+        <Route exact path="/">
+          <AllMeetupPage />
+        </Route>
+        <Route path="/new-meetup">
+          <NewMeetup />
+        </Route>
+        <Route path="/favorities">
+          <FavoritesPage />
+        </Route>
+  </Switch>
+
+      </div>
   );
 }
 
